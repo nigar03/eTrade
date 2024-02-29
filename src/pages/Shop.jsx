@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from '../components/Card';
 import { useContext } from 'react';
 import { ProductContext } from '../context/ProductProvider';
+import { LangContext } from '../context/LangContext';
 
 
 
@@ -18,22 +19,22 @@ const Shop = () => {
 
 
 
-
+const [lang]=useContext(LangContext);
   return (
    < >
 
    <div className="container">
-   <h2 style={{textAlign:'center'}}>Product List</h2>
+   <h2 style={{textAlign:'center'}}>{ lang ==='az'? 'Mehsullarin Siyahisi' :'Product List'}</h2>
    <div className='row'>
 
 <div className='col col-sm-12 col-md-3 my-4' id='solid'>
 
    <ul style={{listStyle:"none"}}>
-    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('smartphone')}}>Smartphone</li>
-    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('laptops')}}>Laptops</li>
-    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('fragrance')}}>Fragrance</li>
-    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('skincare')}}>Skincare</li>
-    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('groceries')}}>Groceries</li>
+    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('smartphone')}}>{lang==='az'?'Smartfon':'Smartphone'}</li>
+    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('laptops')}}>{lang==='az'?'Noutbuklar':'Laptops'}</li>
+    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('fragrance')}}>{lang==='az'?'Ətir':'Fragrance'}</li>
+    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('skincare')}}>{lang==='az'?'Dəriyə qulluq':'Skincare'}</li>
+    <li style={{border:'1px solid black',textAlign:'center',fontWeight:'bold'}} onClick={() =>{handleclick('groceries')}}>{lang==='az'?'Baqqal':'Groceries'}</li>
    </ul>
    </div>
 <div className='col col-sm-12 col-md-9 my-4'>

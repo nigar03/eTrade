@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LangContext } from '../context/LangContext'
 
 function Footer() {
+  const [lang] = useContext(LangContext);
   return (
    <div className="container">
     <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
@@ -10,7 +12,7 @@ function Footer() {
      <footer className="py-5">
     <div className="row">
       <div className="col-6 col-md-2 mb-3">
-        <h5>Support</h5>
+        <h5>{lang === 'az'?'Dəstək':'Support'}</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">685 Market Street, <br />
                                 Las Vegas, LA 95820, <br />
@@ -22,31 +24,31 @@ function Footer() {
       </div>
 
       <div className="col-6 col-md-2 mb-3">
-        <h5>Account</h5>
+        <h5>{lang === 'az'?'Hesab':'Account'}</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">My Account</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Login / Register</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Cart</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Wishlist</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Shop</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Mənim Hesabım':'My Account'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Giriş / Qeydiyyat':'Login / Register'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Sebet':'Cart'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'İstək siyahısı':'Wishlist'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Shop':'Shop'}</a></li>
         </ul>
       </div>
 
       <div className="col-6 col-md-2 mb-3">
-        <h5>Quick Link</h5>
+        <h5>{lang === 'az'?'Sürətli keçid':'Quick Linktact'}</h5>
         <ul className="nav flex-column">
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Terms Of Use</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">FAQ</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Contact</a></li>
-          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Contact</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Gizlilik Siyasəti':'Privacy Policy'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'İstifadə qaydaları':'Terms Of Use'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Tez-tez verilən suallar':'FAQ'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Əlaqə':'Contact'}</a></li>
+          <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">{lang === 'az'?'Əlaqə':'Contact'}</a></li>
         </ul>
       </div>
 
       <div className="col-md-5 offset-md-1 mb-3">
         <form>
-          <h5>Download App</h5>
-          <p>Save $3 With App & New User only</p>
+          <h5>{lang === 'az'?'Proqramı yükləyin':'Download App'}</h5>
+          <p>{lang === 'az'?'Yalnız Proqram və Yeni İstifadəçi ilə $3 qənaət edin':'Save $3 With App & New User only'}</p>
           <div className="d-flex flex-column flex-sm-row w-100 gap-2">
             <img src="	https://new.axilthemes.com/demo/template/etrade/assets/images/others/qr.png" alt="" />
           

@@ -1,27 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useCart } from 'react-use-cart'
+import { LangContext } from '../context/LangContext'
 
 function CartPages() {
 
   const { items, updateItemQuantity, removeItem, isEmpty ,cartTotal,emptyCart} = useCart()
+  const [lang] =useContext(LangContext);
   return (
     <>
      <div className="addtocart" style={{height:'95vh'}}>
-     {isEmpty ? <h1 className='text-center'>No Product</h1> :
+     {isEmpty ? <h1 className='text-center'>{lang==='az'?'Məhsul yoxdur':'No Product'}</h1> :
       
       <div className='container '>
        <div className="row">
-         <h1 className='text-center text-danger'>Cart</h1>
+         <h1 className='text-center text-danger'>{lang==='az'?'Səbət':'Cart'}</h1>
          <div className='col sm-12 md-9'>
            <table className="table " >
              <thead>
                <tr>
                  <th scope="col">#</th>
-                 <th scope="col">Photo</th>
-                 <th scope="col">Title</th>
-                 <th scope="col">Price</th>
-                 <th scope="col">Quantity</th>
-                 <th scope="col">Delete</th>
+                 <th scope="col">{lang==='az'?'Şəkil':'Photo'}</th>
+                 <th scope="col">{lang==='az'?'Başlıq':'Title'}</th>
+                 <th scope="col">{lang==='az'?'Qiymət':'Price'}</th>
+                 <th scope="col">{lang==='az'?'Kəmiyyət':'Quantity'}</th>
+                 <th scope="col">{lang==='az'?'Sil':'Delete'}</th>
                </tr>
              </thead>
              <tbody>
@@ -55,11 +57,11 @@ function CartPages() {
          </div>
          <div className='col sm-12 md-3' >
            <ul class="list-group">
-             <li class="list-group-item"><h3>Total Price:</h3></li>
+             <li class="list-group-item"><h3>{lang==='az'?'Ümumi qiymət':'Total Price'}:</h3></li>
              <li class="list-group-item"><h4 className='text-danger'>{cartTotal}$</h4></li>
              <li class="list-group-item">
-             <button onClick={()=>{emptyCart()}} className='btn btn-danger'>Clear Cart</button>
-             <button  className='btn btn-success ms-3'>Checkout</button></li>
+             <button onClick={()=>{emptyCart()}} className='btn btn-danger'>{lang==='az'?'Səbəti təmizləyin':'Clear Cart'}</button>
+             <button  className='btn btn-success ms-3'>{lang==='az'?'Yoxla':'Checkout'}</button></li>
            </ul>
 
 

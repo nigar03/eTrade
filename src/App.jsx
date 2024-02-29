@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import { CartProvider } from 'react-use-cart';
 import CartPage from './pages/CartPage'
 import { ModeContext, ModeProvider } from './context/ModeContext';
+import { LangProvider } from './context/LangContext';
 
 
 
@@ -40,9 +41,11 @@ function App() {
   return (
 
     <BrowserRouter>
-      <ModeProvider>
+     <LangProvider>
+     <ModeProvider>
         <Main />
       </ModeProvider>
+     </LangProvider>
     </BrowserRouter>
 
 

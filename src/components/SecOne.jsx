@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LangContext } from '../context/LangContext'
 
 function SecOne() {
+    const [lang] =useContext(LangContext);
     return (
+        
         <div className='secone'>
+            
             <div className="container">
 
                 <div className="common">
                     <div className="text">
                         <span><i class="fa-solid fa-fire" style={{ color: '#ff497c', fontSize: '20px' }}></i></span>
-                        <span style={{ color: '#ff497c', fontWeight: '500', fontSize: '14px' }}> Hot Deal In This Week</span>
-                        <h1>Roco Wireless Headphone</h1>
+                        <span style={{ color: '#ff497c', fontWeight: '500', fontSize: '14px' }}> { lang === 'az'? 'Bu Həftədə İsti Sövdələşmə':'Hot Deal In This Week'}</span>
+                        <h1>{ lang ==='az'?'Roco Simsiz Qulaqlıq':'Roco Wireless Headphone'}</h1>
                         <div className="btn">
-                            <div className="shopnnow"><i class="fa-solid fa-cart-shopping"></i> <span>Shop Now</span></div>
+                            <div className="shopnnow"><i class="fa-solid fa-cart-shopping"></i> <span>{lang ==='az'?'İndi alış-veriş edin':'Shop Now'}</span></div>
                             <div className="photos">
                                 <ul>
                                     <li ><img src="https://new.axilthemes.com/demo/template/etrade/assets/images/others/author1.png" alt="" /></li>
@@ -22,7 +26,7 @@ function SecOne() {
                             </div>
                             <div className="star">
                                 <p> <i class="fa-solid fa-star" style={{ color: ' rgb(253, 230, 66)' }}></i><i style={{ color: ' rgb(253, 230, 66)' }} class="fa-solid fa-star"></i><i style={{ color: ' rgb(253, 230, 66)' }} class="fa-solid fa-star"></i><i style={{ color: ' rgb(253, 230, 66)' }} class="fa-solid fa-star"></i><i class="fa-regular fa-star" style={{ color: 'rgb(253, 230, 66)' }}></i></p>
-                                <div className="rev"> <p>100+  Review</p></div>
+                                <div className="rev"> <p>100+  {lang === 'az'?'Baxis':'Review'}</p></div>
                             </div>
 
                         </div>
